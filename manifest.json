@@ -1,0 +1,32 @@
+{
+  "name": "Quickly Google Meet",
+  "version": "1.0",
+  "description": "Quickly Google Meet shortcut that generate the new meeting and copy new meeting link automatically.",
+  "permissions": ["tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/images/icon16.png",
+      "48": "assets/images/icon48.png",
+      "128": "assets/images/icon128.png"
+    }
+  },
+  "content_scripts": [{
+    "matches": [
+      "http://meet.google.com/*", "https://meet.google.com/*"
+    ],
+    "js": [
+      "vendor/js/jquery.min.js",
+      "content/content.js"
+    ],
+    "all_frames": true
+  }],
+  "icons": {
+    "16": "assets/images/icon16.png",
+    "48": "assets/images/icon48.png",
+    "128": "assets/images/icon128.png"
+  },
+  "manifest_version": 3
+}
